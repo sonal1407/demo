@@ -1,0 +1,32 @@
+<div _ngcontent-c4="" class="card border-0">
+  <div _ngcontent-c4="" class="card-body">
+    <div _ngcontent-c4="" class="table-responsive border-bottom">
+      <table _ngcontent-c4="" class="table table-striped table-sm">
+        <thead _ngcontent-c4="">
+          <tr _ngcontent-c4="">
+            <th *ngFor="let head of header.name" appStatus>{{head}}</th>
+          </tr>
+        <tbody _ngcontent-c4="">
+          <!-- <div *ngIf="action; else data"> -->
+            <tr *ngFor="let data of dataList">
+              <td *ngFor="let data1 of header.key">
+                {{data[data1]}}
+              </td> 
+              <td>
+              <button  (click)="actionClick(data.id)">View</button>
+              <button (click)="actionClick(action.EDIT)">EDIT</button>
+              </td>
+            </tr>
+          <!-- </div> -->
+          <ng-template #data>
+            <tr *ngFor="let data of dataList">
+              <td *ngFor="let data1 of header.key">
+                {{data[data1]}}
+              </td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
